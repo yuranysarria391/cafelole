@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CAFELOLE | Cápsulas de Café Reutilizables</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Georgia',serif;
+background:#120b08;
+color:#fff3e6;
+overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+z-index:999;
+background:rgba(18,11,8,0.7);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,200,150,0.1);
+}
+
+.logo{
+font-size:26px;
+font-weight:900;
+letter-spacing:4px;
+color:#d8a15d;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li{
+font-family:sans-serif;
+font-size:13px;
+letter-spacing:2px;
+cursor:pointer;
+opacity:.8;
+transition:.3s;
+}
+
+nav ul li:hover{
+opacity:1;
+color:#d8a15d;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+background:radial-gradient(circle at top,#2a140d,#0b0604);
+position:relative;
+overflow:hidden;
+}
+
+.hero-content{
+max-width:850px;
+z-index:2;
+}
+
+.hero small{
+letter-spacing:5px;
+color:#d8a15d;
+font-family:sans-serif;
+font-size:12px;
+}
+
+.hero h1{
+font-size:72px;
+margin:20px 0;
+line-height:1;
+color:#fff7ee;
+}
+
+.hero h1 span{
+color:#d8a15d;
+font-style:italic;
+}
+
+.hero p{
+font-size:18px;
+opacity:.85;
+line-height:1.9;
+max-width:700px;
+margin:auto;
+}
+
+.btn{
+margin-top:30px;
+padding:16px 45px;
+border:none;
+border-radius:50px;
+background:linear-gradient(135deg,#d8a15d,#a86b2d);
+color:#1a0f08;
+font-weight:900;
+cursor:pointer;
+transition:.3s;
+}
+
+/* SECCIONES */
+section{
+padding:110px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.title h2{
+font-size:48px;
+font-style:italic;
+}
+
+.title p{
+opacity:.7;
+max-width:750px;
+margin:auto;
+line-height:1.8;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:linear-gradient(145deg,#1a0f0a,#120a06);
+padding:40px;
+border-radius:28px;
+border:1px solid rgba(216,161,93,0.15);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#d8a15d;
+}
+
+.card i{
+font-size:40px;
+color:#d8a15d;
+margin-bottom:20px;
+}
+
+/* EXPERIENCE */
+.experience{
+background:linear-gradient(135deg,#1a0f0a,#2a160e);
+border-radius:40px;
+padding:90px 50px;
+text-align:center;
+}
+
+/* TEXT BLOCKS */
+.text-section{
+max-width:900px;
+margin:auto;
+line-height:2;
+opacity:.85;
+text-align:center;
+}
+
+/* COLOMBIA */
+.cities{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:30px;
+}
+
+.city{
+padding:10px 18px;
+border:1px solid rgba(216,161,93,0.3);
+border-radius:20px;
+font-size:14px;
+opacity:.8;
+}
+
+/* FOOTER */
+.footer{
+background:#0d0705;
+padding:80px 20px 30px;
+border-top:1px solid rgba(216,161,93,0.15);
+}
+
+.footer-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+margin-bottom:50px;
+}
+
+.footer-brand .logo-footer{
+font-size:28px;
+font-weight:900;
+letter-spacing:4px;
+color:#d8a15d;
+margin-bottom:15px;
+}
+
+.footer-brand p{
+opacity:.7;
+line-height:1.8;
+font-size:14px;
+}
+
+.footer-links h4,
+.footer-contact h4{
+color:#d8a15d;
+margin-bottom:15px;
+font-size:16px;
+letter-spacing:1px;
+}
+
+.footer-links a{
+display:block;
+color:#fff3e6;
+opacity:.7;
+text-decoration:none;
+margin-bottom:10px;
+font-size:14px;
+transition:.3s;
+}
+
+.footer-links a:hover{
+opacity:1;
+color:#d8a15d;
+transform:translateX(5px);
+}
+
+.footer-contact p{
+opacity:.7;
+margin-bottom:8px;
+font-size:14px;
+}
+
+.social{
+margin-top:15px;
+display:flex;
+gap:15px;
+}
+
+.social i{
+font-size:18px;
+color:#d8a15d;
+cursor:pointer;
+transition:.3s;
+}
+
+.social i:hover{
+transform:scale(1.2);
+}
+
+.footer-bottom{
+text-align:center;
+padding-top:20px;
+border-top:1px solid rgba(255,200,150,0.08);
+font-size:13px;
+opacity:.6;
+}
+
+html{
+scroll-behavior:smooth;
+}
+.whatsapp-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25d366;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+z-index:1000;
+transition:.3s;
+text-decoration:none;
+}
+
+.whatsapp-btn:hover{
+transform:scale(1.1);
+box-shadow:0 15px 40px rgba(37,211,102,0.4);
+}
+/* NAV BASE */
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+z-index:999;
+background:rgba(18,11,8,0.7);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,200,150,0.1);
+}
+
+/* HAMBURGUESA (OCULTA EN PC) */
+.menu-toggle{
+display:none;
+font-size:24px;
+color:#d8a15d;
+cursor:pointer;
+}
+
+/* MENU DESKTOP */
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li{
+font-family:sans-serif;
+font-size:13px;
+letter-spacing:2px;
+cursor:pointer;
+opacity:.8;
+transition:.3s;
+}
+
+nav ul li:hover{
+opacity:1;
+color:#d8a15d;
+}
+
+/* 📱 MOBILE */
+@media (max-width:768px){
+
+nav{
+padding:20px 25px;
+}
+
+.menu-toggle{
+display:block;
+}
+
+nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+flex-direction:column;
+background:#120b08;
+padding:20px 0;
+display:none;
+text-align:center;
+border-bottom:1px solid rgba(255,200,150,0.1);
+}
+
+nav ul.show{
+display:flex;
+}
+
+nav ul li{
+padding:15px 0;
+font-size:14px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+
+<div class="logo">CAFELOLE</div>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fas fa-bars"></i>
+</div>
+
+<ul id="menu">
+<li>Inicio</li>
+<li>Experiencia</li>
+<li>Café</li>
+<li>Cobertura</li>
+<li>Contacto</li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+
+<small>EXPERIENCIA SENSORIAL</small>
+
+<h1>El café no se fabrica,<br><span>se vive</span></h1>
+
+<p>
+Transformamos cápsulas reutilizables en una experiencia premium de recarga.
+Cada recarga es un ritual.
+</p>
+
+<button class="btn">Descubrir experiencia</button>
+
+</div>
+</section>
+
+<!-- SERVICIOS -->
+<section>
+<div class="container">
+
+<div class="title">
+<h2>Servicios CAFELOLE</h2>
+<p>Todo lo que necesitas para una experiencia de café premium.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-coffee"></i>
+<h3>Recarga Premium</h3>
+<p>Café de origen seleccionado con perfiles aromáticos únicos.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-leaf"></i>
+<h3>Sostenibilidad</h3>
+<p>Reducción de residuos mediante cápsulas reutilizables.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-mug-hot"></i>
+<h3>Experiencia Barista</h3>
+<p>Calidad profesional en casa u oficina.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- COBERTURA COLOMBIA -->
+<section>
+<div class="container">
+
+<div class="title">
+<h2>Cobertura en Colombia</h2>
+<p>Estamos presentes en las principales ciudades del país.</p>
+</div>
+
+<div class="text-section">
+CAFELOLE distribuye cápsulas y sistemas de recarga en múltiples regiones de Colombia,
+garantizando acceso a una experiencia de café sostenible.
+</div>
+
+<div class="cities">
+
+<div class="city">Bogotá</div>
+<div class="city">Medellín</div>
+<div class="city">Cali</div>
+<div class="city">Barranquilla</div>
+<div class="city">Cartagena</div>
+<div class="city">Bucaramanga</div>
+<div class="city">Pereira</div>
+<div class="city">Manizales</div>
+<div class="city">Santa Marta</div>
+<div class="city">Ibagué</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- TERMINOS -->
+<section>
+<div class="container">
+
+<div class="title">
+<h2>Términos y Condiciones</h2>
+</div>
+
+<div class="text-section">
+El uso de CAFELOLE implica la aceptación de nuestras condiciones de servicio.
+Los productos de recarga están sujetos a disponibilidad y uso adecuado de cápsulas reutilizables.
+CAFELOLE no se hace responsable por mal uso del sistema o incompatibilidad con cafeteras no soportadas.
+</div>
+
+</div>
+</section>
+
+<!-- PRIVACIDAD -->
+<section>
+<div class="container">
+
+<div class="title">
+<h2>Política de Privacidad</h2>
+</div>
+
+<div class="text-section">
+Respetamos tu privacidad. Los datos recopilados se utilizan únicamente para mejorar la experiencia de compra,
+logística de recarga y atención al cliente. No compartimos información personal con terceros sin consentimiento.
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- BRAND -->
+<div class="footer-brand">
+<div class="logo-footer">CAFELOLE</div>
+<p>
+El arte de la recarga de café.<br>
+Experiencia premium, sostenible y sensorial.
+</p>
+</div>
+
+<!-- LINKS -->
+<div class="footer-links">
+<h4>Explorar</h4>
+<a href="#">Inicio</a>
+<a href="#">Servicios</a>
+<a href="#">Recarga</a>
+<a href="#">Cobertura</a>
+</div>
+
+<!-- LEGAL -->
+<div class="footer-links">
+<h4>Legal</h4>
+<a href="#">Términos y condiciones</a>
+<a href="#">Política de privacidad</a>
+</div>
+
+<!-- CONTACT -->
+<div class="footer-contact">
+<h4>Contacto</h4>
+<p>Carrera 58d #146-51, Bogotá, Colombia</p>
+<p>cafelole@gmail.com</p>
+<p>314 227 8210</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 CAFELOLE — Todos los derechos reservados
+</div>
+
+</footer>
+<!-- BOTÓN WHATSAPP -->
+<a href="https://wa.me/573142278210" target="_blank" class="whatsapp-btn">
+<i class="fab fa-whatsapp"></i>
+</a>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+toggle.addEventListener("click", () => {
+menu.classList.toggle("show");
+});
+</script>
+</body>
+</html>
